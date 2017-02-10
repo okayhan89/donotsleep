@@ -1,0 +1,39 @@
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        "scrollX": true,
+        "ajax": {
+            "url": "/dataTable1",
+            "type": "POST"
+        },
+    } );
+} );
+</script>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">DataTable</h1>
+</div>
+<div class="wrapper-md" >
+
+	<div class="panel-heading font-bold h4">[DataTable]</div>
+
+	<table id="example" class="display nowrap" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>data</th>
+				<th>time</th>
+				<th>humidity</th>
+				<th>temporate</th>
+				<th>discomfort</th>
+				<th>eye</th>
+				<th>co2</th>
+			</tr>
+		</thead>
+	</table>
+
+</div>

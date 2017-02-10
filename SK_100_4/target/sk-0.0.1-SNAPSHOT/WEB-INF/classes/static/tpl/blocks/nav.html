@@ -1,0 +1,154 @@
+<style type="text/css">
+.nav-page{
+	margin-left:15px;
+	font-size:small;
+}
+.navi ul.nav li li a{
+	padding-left:30px;
+}
+.seeso-pink{
+	color:#ff6633;
+}
+.seeso-blue{
+	color:#cc0033;
+}
+
+</style>
+
+
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Navigation</span>
+  </li>
+  
+  <!-- NAVI-DASHBOARD  part-->
+  <li>   
+      <li ui-sref-active="active">
+        <a ui-sref="app.dashboard">
+          <i class="fa fa-tachometer fa-lg seeso-blue" ></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.livechart">
+          <i class="fa fa-tachometer fa-lg seeso-pink" ></i>
+          <span>LiveChart</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.datatable">
+          <i class="fa fa-tachometer fa-lg seeso-blue" ></i>
+          <span>DataTable</span>
+        </a>
+      </li>
+  </li> 
+  
+  
+  
+  <!-- USER MANAGE  -->
+  <li>
+ 	<a href class="auto">      
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="fa fa-user fa-lg seeso-blue" ></i>
+      <span>User Manage</span>
+    </a>
+    
+ 	   
+    <ul class="nav nav-sub dk">
+  	
+  	  <!-- User Info -->
+      <li ui-sref-active="active">
+        <a href class="auto">      
+	      <span class="pull-right text-muted">
+	        <i class="fa fa-fw fa-angle-right text"></i>
+	        <i class="fa fa-fw fa-angle-down text-active"></i>
+	      </span>
+	      <span>User Info</span>
+	    </a>
+	    
+	    <!-- personal user -->
+	    <ul class="nav nav-sub dk">
+	    	<li ui-sref-active="active">
+	        	<a ui-sref="app.user.info.personal">
+	        	<span class="nav-page">personal user</span>
+	       		</a>
+	     	</li>
+	    </ul>
+	    <!-- corporate user -->
+	    <ul class="nav nav-sub dk">
+	    	<li ui-sref-active="active">
+	        	<a ui-sref="app.user.info.corporate">
+	        	<span class="nav-page">corporate user</span>
+	       		</a>
+	     	</li>
+	    </ul>
+	    <!-- block user -->
+	    <ul class="nav nav-sub dk">
+	    	<li ui-sref-active="active">
+	        	<a ui-sref="app.user.info.block">
+	        	<span class="nav-page">block user</span>
+	       		</a>
+	     	</li>
+	    </ul>
+	    <!-- leaving user -->
+	    <ul class="nav nav-sub dk">
+	    	<li ui-sref-active="active">
+	        	<a ui-sref="app.user.info.leaving">
+	        	<span class="nav-page">leaving user</span>
+	       		</a>
+	     	</li>
+	    </ul>
+      </li>
+      
+      
+      <!-- Admin User -->
+      <li ui-sref-active="active">
+        <a href class="auto">      
+	      <span class="pull-right text-muted">
+	        <i class="fa fa-fw fa-angle-right text"></i>
+	        <i class="fa fa-fw fa-angle-down text-active"></i>
+	      </span>
+	      <span>Admin User</span>
+	    </a>
+	    
+	    <!-- information -->
+	    <ul class="nav nav-sub dk">
+	    	<li ui-sref-active="active">
+	        	<a ui-sref="app.user.admin.info">
+	        	<span class="nav-page">information</span>
+	       		</a>
+	     	</li>
+	    </ul>
+	    <!-- log information -->
+	    <ul class="nav nav-sub dk">
+	    	<li ui-sref-active="active">
+	        	<a ui-sref="app.user.admin.log">
+	        	<span class="nav-page">log information</span>
+	       		</a>
+	     	</li>
+	    </ul>
+      </li>
+    </ul>
+  </li>
+  <!-- / USER MANAGE  -->
+  
+ 
+ 
+
+ <!-- Customer Support -->
+  <li>   
+      <li ui-sref-active="active">
+        <a ui-sref="app.stop">
+          <i class="icon-user icon text-success-lter seeso-pink"></i>
+          <span>Customer Support</span>
+        </a>
+      </li>
+  </li>
+ 
+ 
+ 
+<!-- / list -->

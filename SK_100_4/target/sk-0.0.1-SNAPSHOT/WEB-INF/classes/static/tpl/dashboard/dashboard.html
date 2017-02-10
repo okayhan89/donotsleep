@@ -1,0 +1,155 @@
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">DashBoard</h1>
+</div>
+<div class="wrapper-md" ng-controller="DashboardController">
+
+	<!-- Sensor Data -->
+	<div class="panel-heading font-bold h4">[Sensor Data]</div>
+	
+	<!-- Heart graph -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-12 text-center">[Heart]</div>
+			</div>
+
+			<div class="panel wrapper">
+				<div ui-jq="plot"
+					ui-options="
+					              [
+					                {	 data:{{heart}}, 
+					                	label:'Heart', points: { show: true, radius: 1}, 
+					                	lines: { show: true,  lineWidth: 1, fill: 0 } 
+					                },
+					                
+					              ], 
+					             
+					              {
+					                colors: [ '#2BB0C5', '#DC2E5E' ],
+					                series: { shadowSize: 2 },
+					                xaxis:{ font: { color: '#ccc' } },
+					                yaxis:{ font: { color: '#ccc' } },
+					                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+					                tooltip: true,
+					                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+					                
+					              }
+					            "
+					style="height: 240px"></div>
+			</div>
+		</div>
+	</div>
+	<!-- / Heart graph -->
+	
+	
+	<!-- Temperature graph -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-12 text-center">[Temperature]</div>
+			</div>
+
+			<div class="panel wrapper">
+				<div ui-jq="plot"
+					ui-options="
+					              [
+					                {	 data:{{temperature}},  
+					                	label:'Temperature', points: { show: true, radius: 1}, 
+					                	lines: { show: true,  lineWidth: 1, fill: 0 } 
+					                },
+					                
+					              ], 
+					             
+					              {
+					                colors: [ '#DC2E5E' ],
+					                series: { shadowSize: 2 },
+					                xaxis:{ font: { color: '#ccc' } },
+					                yaxis:{ font: { color: '#ccc' } },
+					                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+					                tooltip: true,
+					                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+					                
+					              }
+					            "
+					style="height: 240px"></div>
+			</div>
+		</div>
+	</div>
+	<!-- / Temperature graph -->
+	
+	<!-- Humidity graph -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-12 text-center">[Humidity]</div>
+			</div>
+
+			<div class="panel wrapper">
+				<div ui-jq="plot"
+					ui-options="
+					              [
+					                {	 data:{{humidity}},  
+					                	label:'Humidity', points: { show: true, radius: 1}, 
+					                	lines: { show: true,  lineWidth: 1, fill: 0 } 
+					                },
+					                
+					              ], 
+					             
+					              {
+					                colors: [ '#2BB0C5', '#DC2E5E' ],
+					                series: { shadowSize: 2 },
+					                xaxis:{ font: { color: '#ccc' } },
+					                yaxis:{ font: { color: '#ccc' } },
+					                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+					                tooltip: true,
+					                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+					                
+					              }
+					            "
+					style="height: 240px"></div>
+			</div>
+		</div>
+	</div>
+	<!-- / Humidity graph -->
+	
+	<!-- discomfort graph -->
+	<div class="row">
+		<!-- Heart graph -->
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-12 text-center">[Discomfort]</div>
+			</div>
+
+			<div class="panel wrapper">
+				<div ui-jq="plot"
+					ui-options="
+					              [
+					                {	 data:{{discomfort}}, 
+					                	label:'Discomfort', points: { show: true, radius: 1}, 
+					                	lines: { show: true,  lineWidth: 1, fill: 0 } 
+					                },
+					                
+					              ], 
+					             
+					              {
+					                colors: [  '#DC2E5E' ],
+					                series: { shadowSize: 2 },
+					                xaxis:{ font: { color: '#ccc' } },
+					                yaxis:{ font: { color: '#ccc' } },
+					                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+					                tooltip: true,
+					                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+					                
+					              }
+					            "
+					style="height: 240px"></div>
+			</div>
+		</div>
+	</div>
+	<!-- / Discomfort graph -->
+	
+
+	<!-- / Sensor Data -->
+
+
+</div>

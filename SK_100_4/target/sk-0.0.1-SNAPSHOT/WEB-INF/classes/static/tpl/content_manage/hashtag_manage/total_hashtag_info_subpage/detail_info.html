@@ -1,0 +1,161 @@
+<script type="text/javascript">
+	
+</script>
+
+<style>
+th,tr {
+    text-align: center;
+}
+</style>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">Content Manange > Total Hashtag Information > Primary Hashtag Detail Information</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="DetailInfoController">
+	<div class="panel panel-default"
+		style="padding-left: 10px; padding-right: 10px;">
+		<form class="form-horizontal" action="formActionBody1" method="POST"
+			name="frm">
+
+			<!-- Primary HashTag -->
+			<div class="row" style="padding-top: 20px;">
+				<div class="h4 font-bold text-center">
+					{{primary_hashtag}}
+				</div>
+			</div>
+			<!-- / Primary HashTag -->
+
+			<!-- table -->
+			<div class="row" style="padding-top: 30px; padding-bottom: 30px;">
+				<table class="table">
+				<tr>
+					<th>Share Count</th>
+					<th>View Count</th>
+					<th>Heart Count</th>
+					<th>Comment Count</th>
+					<th>Admin HashTag YN</th>
+					<th>Created Date</th>
+				</tr>
+				<tr>
+					<th>30</th>
+					<th>40</th>
+					<th>150</th>
+					<th>50</th>
+					<th>Y</th>
+					<th>1/12/16 10:48</th>
+				</tr>
+				</table>
+			</div>
+			<!-- / table -->
+			
+			
+			
+			<!-- table clip -->
+			<table class="col-md-3">
+				<tr>
+					<td rowspan="4" colspan="2"><img src="img/b6.jpg" /></td>
+					<td>View : {{view_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Heart: {{heart_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Share : {{share_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Comment : {{comment_cnt}}</td>
+				</tr>
+				<tr>
+					<td>
+					<button type="button" class="btn btn btn-default" ng-click="modify()">Modify</button>
+					</td>
+					<td>
+					<button type="button" class="btn btn btn-default" ng-click="delete_check()">Delete</button>
+					</td>
+				</tr>
+			</table>
+			<!-- / table clip -->
+			<!-- table clip -->
+			<table class="col-md-3">
+				<tr>
+					<td rowspan="4" colspan="2"><img src="img/b6.jpg" /></td>
+					<td>View : {{view_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Heart: {{heart_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Share : {{share_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Comment : {{comment_cnt}}</td>
+				</tr>
+				<tr>
+					<td><button type="button" class="btn btn btn-default">Modify</button></td>
+					<td><button type="button" class="btn btn btn-default">Delete</button></td>
+				</tr>
+			</table>
+			<!-- / table clip -->
+			<!-- table clip -->
+			<table class="col-md-3">
+				<tr>
+					<td rowspan="4" colspan="2"><img src="img/b6.jpg" /></td>
+					<td>View : {{view_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Heart: {{heart_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Share : {{share_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Comment : {{comment_cnt}}</td>
+				</tr>
+				<tr>
+					<td><button type="button" class="btn btn btn-default">Modify</button></td>
+					<td><button type="button" class="btn btn btn-default">Delete</button></td>
+				</tr>
+			</table>
+			<!-- / table clip -->
+			<!-- table clip -->
+			<table class="col-md-3">
+				<tr>
+					<td rowspan="4" colspan="2"><img src="img/b6.jpg" /></td>
+					<td>View : {{view_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Heart: {{heart_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Share : {{share_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Comment : {{comment_cnt}}</td>
+				</tr>
+				<tr>
+					<td><button type="button" class="btn btn btn-default">Modify</button></td>
+					<td><button type="button" class="btn btn btn-default">Delete</button></td>
+				</tr>
+			</table>
+			<!-- / table clip -->
+			
+			
+			
+			<!-- line -->
+			<div class="line line-dashed b-b line-lg pull-in"></div>
+			<!-- / line -->
+
+			<!-- footer button -->
+			<div class="row"
+				style="padding-top: 10px; padding-bottom: 20px; padding-left: 10px;">
+				<div class="col-sm-1 col-xs-3">
+					<a ui-sref="app.content.hashtag.total">
+						<button type="button" class="btn btn btn-default">Back</button>
+					</a>
+				</div>
+			</div>
+			<!-- / footer button -->
+		</form>
+	</div>
+</div>

@@ -1,0 +1,192 @@
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">Statistical Info > General Statistics</h1>
+</div>
+<div class="wrapper-md" ng-controller="GeneralController">
+
+	<!-- Sample1 -->
+	<div class="panel-heading font-bold h4">[Sample1]</div>
+	<div class="row">
+		<!-- visit/download graph -->
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-6 text-center">[Visitors]</div>
+				<div class="panel-heading font-bold col-md-6 text-center">[Downloaders]</div>
+			</div>
+
+			<div class="panel wrapper">
+				<div class="row">
+					<h4 class="font-thin m-t-none m-b text-muted"></h4>
+				</div>
+				<div class="row">
+					<h5 class="text-center m-t-none m-b text-muted col-xs-6  ">[Market
+						Visited today]</h5>
+					<h5 class="text-center m-t-none m-b text-muted col-xs-6 ">[App
+						Downloaded today]</h5>
+				</div>
+				<div class="row">
+					<h4
+						class="font-bold text-center m-t-none m-b text-muted col-xs-6  ">
+						{{market_visited_today}} <span ng-show="market_visited_today> 100"
+							class="glyphicon glyphicon-arrow-up"></span>
+					</h4>
+					<h4 class="font-bold text-center m-t-none m-b text-muted col-xs-6 ">
+						{{app_downloaded_today}} <span ng-show="market_visited_today> 100"
+							class="glyphicon glyphicon-arrow-right"></span>
+					</h4>
+				</div>
+				<div ui-jq="plot"
+					ui-options="
+					              [
+					                {	 data:[ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ], 
+					                	label:'Market Visited today', points: { show: true, radius: 1}, 
+					                	lines: { show: true,  lineWidth: 1, fill: 0 } 
+					                },
+					                { 	data:[ [0,4],[1,4.5],[2,7],[3,4.5],[4,3],[5,3.5],[6,6],[7,3],[8,4],[9,3] ], 
+					              	 	 label:'App Downloaded today', points: { show: true, radius: 1}, 
+					               		 lines: { show: true,  lineWidth: 1, fill: 0 } 
+					                }
+					              ], 
+					             
+					              {
+					                colors: [ '#2BB0C5', '#DC2E5E' ],
+					                series: { shadowSize: 2 },
+					                xaxis:{ font: { color: '#ccc' } },
+					                yaxis:{ font: { color: '#ccc' } },
+					                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+					                tooltip: true,
+					                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+					                
+					              }
+					            "
+					style="height: 240px"></div>
+			</div>
+		</div>
+		<!-- / visit/download graph -->
+	</div>
+	<!-- / Sample1 -->
+
+
+
+	<!-- Sample2 -->
+	<div class="panel-heading font-bold h4">[Sample2]</div>
+	<div class="row">
+		<!-- Active Users graph -->
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-12 text-center">[Active
+					Users]</div>
+			</div>
+
+			<div class="panel wrapper">
+				<div class="row">
+					<h4 class="font-thin m-t-none m-b text-muted"></h4>
+				</div>
+				<div class="row">
+					<h5 class="text-center m-t-none m-b text-muted col-xs-6  ">[
+						DAU (Daily Active User) ]</h5>
+					<h5 class="text-center m-t-none m-b text-muted col-xs-6 ">[
+						MAU (Monthly Active User) ]</h5>
+				</div>
+				<div class="row">
+					<h2
+						class="font-bold text-center m-t-none m-b text-muted col-xs-6 " style="color:#2BB0C5" >
+						{{market_visited_today}}</h2>
+					<h2 class="font-bold text-center m-t-none m-b text-muted col-xs-6 ">
+						{{app_downloaded_today}}</h2>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading font-bold col-md-12 text-center">[Total
+					User & Daily Active User]</div>
+			</div>
+			<div class="panel wrapper">
+				<div class="panel-body">
+					<div ui-jq="plot"
+						ui-options="
+              [ 
+                { label: 'Total User', data:  [ [10, 120], [20, 70], [30, 140], [40, 60] ] },
+                { label: 'Active User', data: [ [10, 50],  [20, 60], [30, 90],  [40, 35] ] }
+              ],
+              {
+                bars: { show: true, fill: true, lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } },
+                colors: ['#2BB0C5', '#DC2E5E'],
+                series: { shadowSize: 1 },
+                xaxis:{ font: { color: '#ccc' } },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },                
+                tooltip: true
+              }
+            "
+						style="height: 240px"></div>
+				</div>
+			</div>
+
+		</div>
+		<!-- / Active Users graph -->
+
+
+	</div>
+	<!-- / Sample2 -->
+
+
+
+	<!-- Sample3 -->
+
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">Sample3</div>
+		<div class="panel-body">
+			<div ui-jq="plot"
+				ui-options="
+               [ 
+		      { label: 'iPhone5S', data: 40 }, 
+		      { label: 'iPad Mini', data: 10 },
+		      { label: 'iPad Mini Retina', data: 20 },
+		      { label: 'iPhone4S', data: 12 },
+		      { label: 'iPad Air', data: 18 }
+		    ],
+              {
+                series: { pie: { show: true, innerRadius: 0, stroke: { width: 0 }, label: { show: true, threshold: 0.05 } } },
+                colors: ['{{app.color.primary}}','{{app.color.info}}','{{app.color.success}}','{{app.color.warning}}','{{app.color.danger}}'],
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },   
+                tooltip: true,
+                tooltipOpts: { content: '%s: %p.0%' }
+              }
+            "
+				style="height: 240px"></div>
+		</div>
+	</div> 
+	
+	<!-- Sample3 -->
+
+
+	<!-- Sample4 -->
+			<table class="col-md-3">
+				<tr>
+					<td rowspan="4" colspan="2"><img src="img/b6.jpg" /></td>
+					<td>View : {{view_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Heart: {{heart_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Share : {{share_cnt}}</td>
+				</tr>
+				<tr>
+					<td>Comment : {{comment_cnt}}</td>
+				</tr>
+				<tr>
+					<td>
+					<button type="button" class="btn btn btn-default" ng-click="modify()">Modify</button>
+					</td>
+					<td>
+					<button type="button" class="btn btn btn-default" ng-click="delete_check()">Delete</button>
+					</td>
+				</tr>
+			</table>
+	<!-- / Sample4 -->
+
+
+
+
+</div>

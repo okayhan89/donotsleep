@@ -1,0 +1,240 @@
+<script type="text/javascript">
+	
+</script>
+
+<style type="text/css">
+.form-horizontal .form-group {
+	padding-top: 10px;
+}
+</style>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">User Manage > Personal User
+		Information > Advanced Personal User Information</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="AdvancedInfoController">
+	<!-- search part -->
+	<div class="row col-md-8 col-md-offset-4">
+		<div class="panel panel-default"
+			style="padding-left: 10px; padding-right: 10px;">
+			<form class="form-horizontal" action="formActionBody" method="POST"
+				name="frm">
+				<div class="row" style="padding-top: 10px;">
+					<div class="col-md-1">
+						<label class="control-label">Search</label>
+					</div>
+					<div class="col-md-3">
+						<select class="form-control" id="select" name="select">
+							<option>ALL</option>
+							<option>User Alias</option>
+							<option>Type Code</option>
+							<option>Status Code</option>
+							<option>Level Code</option>
+							<option>Act Level Code</option>
+						</select>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" id="text" name="text"
+							placeholder="입력하세요." />
+					</div>
+				</div>
+				<div class="row" style="padding-bottom: 10px; padding-top: 10px;">
+					<div class="col-sm-1 col-xs-12">
+						<label class="control-label">Period</label>
+					</div>
+					<div class="col-sm-2 col-xs-4">
+						<input id="date" name="date" ui-jq="daterangepicker"
+							ui-options="{
+										singleDatePicker: true,
+						                format: 'YYYY-MM-DD',
+						                showDropdowns: true
+						              }"
+							class="form-control w-md" style="width: 90px" />
+					</div>
+					<div class="col-sm-1 col-xs-1">~</div>
+					<div class="col-sm-2 col-xs-4">
+						<input id="date" name="date" ui-jq="daterangepicker"
+							ui-options="{
+										singleDatePicker: true,
+						                format: 'YYYY-MM-DD',
+						                showDropdowns: true
+						              }"
+							class="form-control w-md" style="width: 90px" />
+					</div>
+					<div class="col-sm-4 col-xs-8">
+						<button type="submit" class="btn btn-sm btn btn-default">Today</button>
+						<button type="submit" class="btn btn-sm btn btn-default">1Week</button>
+						<button type="submit" class="btn btn-sm btn btn-default">1Month</button>
+						<button type="submit" class="btn btn-sm btn btn-default">1Year</button>
+						<button type="submit" class="btn btn-sm btn btn-default">All</button>
+					</div>
+					<div class="col-sm-1 col-xs-4">
+						<button type="submit" class="btn btn-sm btn-info"
+							style="font-size: 15px;">Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- / search part -->
+
+
+	<!-- table button top part -->
+	<div class="row">
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button class="btn btn-default" ng-click="selectExcel()"
+					ng-mouseover="button1=' select excel'" ng-mouseout="button1=''">
+					<i class="fa fa-check-square-o">{{button1}}</i>
+				</button>
+				<button class="btn btn-default " ng-click="allExcel()"
+					ng-mouseover="button2=' All excel'" ng-mouseout="button2=''">
+					<i class="glyphicon glyphicon-download-alt">{{button2}}</i>
+				</button>
+				<button class="btn btn-default" ng-click="selectAdvancedExcel()"
+					ng-mouseover="button3=' select Advanced excel'"
+					ng-mouseout="button3=''">
+					<i class="fa fa-copy">{{button3}}</i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- / table button top part -->
+
+	<!-- table -->
+	<form>
+		<div class="table-responsive" style="overflow-x: auto;">
+			<table class="table table-striped">
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>User Alias</th>
+					<th>Type Code</th>
+					<th>Status Code</th>
+					<th>Level Code</th>
+					<th>Hearted Clip Cnt</th>
+					<th>Album Cnt</th>
+					<th>Bookmark Cnt</th>
+					<th>Heart Give Cnt</th>
+					<th>Heart Get Cnt</th>
+					<th>Share Cnt</th>
+					<th>Comment Cnt</th>
+					<th>Created Date</th>
+					<th>Created User No</th>
+					<th>Created Client No</th>
+					<th>Modified Date</th>
+					<th>Modified User No</th>
+					<th>Modified Client No</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>boa</th>
+					<th>1</th>
+					<th>1</th>
+					<th>1</th>
+					<th>56</th>
+					<th>21</th>
+					<th>88</th>
+					<th>365</th>
+					<th>150</th>
+					<th>40</th>
+					<th>30</th>
+					<th>1/13/16 3:27</th>
+					<th>10023</th>
+					<th>100002</th>
+					<th>1/13/16 3:27</th>
+					<th>101260</th>
+					<th>100002</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>seeso</th>
+					<th>1</th>
+					<th>1</th>
+					<th>1</th>
+					<th>30</th>
+					<th>15</th>
+					<th>45</th>
+					<th>123</th>
+					<th>126</th>
+					<th>30</th>
+					<th>20</th>
+					<th>1/13/16 3:27</th>
+					<th>10023</th>
+					<th>100002</th>
+					<th>1/13/16 3:27</th>
+					<th>101259</th>
+					<th>100002</th>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<!-- / table -->
+
+	<!-- table footer button-->
+	<div class="row" style="padding-bottom: 30px;">
+		<!-- 
+		<div class="col-md-4 col-xs-8">
+			<a ui-sref="app.content.clip.newclip">
+			<button class="btn btn-s-sm btn-default" type="button">
+			New Clip</button>
+			</a>
+			
+			<a ui-sref="app.content.clip.modifyclip">
+			<button class="btn btn-s-sm btn-default" type="button">
+			Modify Clip Info</button>
+			</a>
+		</div>
+		<div id="divPaging" class="col-sm-4 text-center text-center-xs">
+		</div>
+
+		<div class="text-right col-md-4 col-xs-2">
+			<a ui-sref="app.content.clip.advanced">
+			<button class="btn btn-s-sm btn-default" type="button"
+				onclick="jsStaffPicks();">Advanced Info</button>
+			</a>
+		</div>
+ -->
+		<div class="row"
+			style="padding-top: 10px; padding-bottom: 20px; padding-left: 25px;">
+			<div class="col-sm-6">
+				<button class="btn btn-s-sm btn-default" type="button"
+					ng-click="block_list()">Block List</button>
+				<button class="btn btn-s-sm btn-default" type="button"
+					ng-click="leaving_list()">Leaving List</button>
+				<button class="btn btn-s-sm btn-default" type="button"
+					ng-click="login_log()">Login Log</button>
+				<button class="btn btn-s-sm btn-default" type="button"
+					ng-click="behavior_log()">Behavior Log</button>
+				<button class="btn btn-s-sm btn-default" type="button"
+					ng-click="share_log()">Share Log</button>
+				<button class="btn btn-s-sm btn-default" type="button"
+					ng-click="report_log()">Report Log</button>
+			</div>
+			<div class="col-sm-3 col-sm-offset-3">
+				<a ui-sref="app.user.info.personal">
+					<button class="btn btn-s-sm btn-default" type="button">Back</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- / table footer button-->
+
+
+	<!-- description -->
+	<div class="row">
+		<pre >
+Type_Code : 일반회원, 기업회원 
+관리자 Status_code : 준회원, 정상, 블락, 탈퇴
+Level_code : 일반, 운영, 마케팅, 파트너, 슈퍼관리자
+		</pre>
+	</div>
+	<!-- / description -->
+
+</div>

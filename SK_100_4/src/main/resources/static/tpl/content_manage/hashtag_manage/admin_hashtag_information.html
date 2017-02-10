@@ -1,0 +1,98 @@
+<script type="text/javascript">
+	
+</script>
+
+<style type="text/css">
+.form-horizontal .form-group {
+	padding-top: 10px;
+}
+</style>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">Content Manange > Admin HashTag Information</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="AdminHashTagInfoController">
+
+
+	<ul id="sortable">
+        <li ng-repeat="item in sortableArray" ng-bind="item"></li>
+    </ul>
+
+	<!-- table -->
+	<form>
+		<div class="table-responsive" style="overflow-x: auto;">
+			<table class="table table-striped">
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>Primary HashTag11</th>
+					<th>Banner</th>
+					<th>Share Count</th>
+					<th>View Count</th>
+					<th>Heart Count</th>
+					<th>Comment Count</th>
+					<th>Admin HashTag YN</th>
+					<th>Created Date</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>#서울예고</th>
+					<th>#서울예고_banner</th>
+					<th>30</th>
+					<th>40</th>
+					<th>150</th>
+					<th>50</th>
+					<th>Y</th>
+					<th>1/12/16 10:48</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>#서울예고</th>
+					<th>#서울예고_banner</th>
+					<th>30</th>
+					<th>40</th>
+					<th>150</th>
+					<th>50</th>
+					<th>Y</th>
+					<th>1/12/16 10:48</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>#서울예고</th>
+					<th>#서울예고_banner</th>
+					<th>30</th>
+					<th>40</th>
+					<th>150</th>
+					<th>50</th>
+					<th>Y</th>
+					<th>1/12/16 10:48</th>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<!-- / table -->
+
+	<!-- table footer button-->
+	<div class="row"style="padding-bottom: 30px;">
+		 <div class="row"
+				style="padding-top: 10px; padding-bottom: 20px; padding-left: 25px;">
+					<button class="btn btn-s-sm btn-default" type="button" ng-click="save()">
+					Save</button>
+					<button class="btn btn-s-sm btn-default" type="button" ng-click="admin_leave()">
+					Admin HashTag 제외</button>
+					<button class="btn btn-s-sm btn-default" type="button" ng-click="setting()"
+					>Ranking Setting</button>
+			</div>
+	</div>
+	<!-- / table footer button-->
+	
+	
+</div>

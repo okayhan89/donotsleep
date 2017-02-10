@@ -1,0 +1,179 @@
+<script type="text/javascript">
+	
+</script>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">Content Manange > Clip
+		Information > Modify Clip</h1>
+</div>
+
+<div class="wrapper-md" >
+	<div class="panel panel-default"
+		style="padding-left: 10px; padding-right: 10px;">
+		<form class="form-horizontal" action="formActionBody1" method="POST"
+			name="frm">
+			<!-- Alias ID -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Alias (ID)</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="alias" name="alias"
+						placeholder="아이디를 입력하세요." ng-model="alias" required />
+				</div>
+				<div class="col-sm-2">
+					<input type="button" value="Check"
+						class="btn btn-sm btn btn-default" ng-click="check()" />
+				</div>
+				<div class="col-sm-2">
+					<div ng-show="frm.alias.$valid">{{alias_check}}</div>
+					<div ng-show="frm.alias.$error.required" style="color: red">alias
+						is required.</div>
+				</div>
+
+
+			</div>
+			<!-- / Alias ID -->
+
+			<!-- Primary HashTag -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Primary HashTag</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="primary_hashtag"
+						name="primary_hashtag" placeholder="#해시태그를 입력하세요."
+						ng-model="primary_hashtag" required />
+				</div>
+				<div class="col-sm-2">
+					<input type="button" value="Search"
+						class="btn btn-sm btn btn-default" ng-click="search()" />
+				</div>
+				<div class="col-sm-3">
+					<div ng-show="frm.primary_hashtag.$valid">{{primary_hashtag_check}}</div>
+					<div ng-show="frm.primary_hashtag.$error.required"
+						style="color: red">primary hashtag is required.</div>
+				</div>
+			</div>
+			<!-- / Primary HashTag -->
+
+			<!-- sub hashtag -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Optional HashTag</label>
+				</div>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="optional_hashtag1"
+						name="optional_hashtag1" ng-model="optional_hashtag1"
+						placeholder="#서브해시태그를 입력하세요." />
+				</div>
+				<div class="col-sm-10 col-sm-offset-2" style="padding-top: 10px;">
+					<input type="text" class="form-control" id="optional_hashtag2"
+						name="optional_hashtag2" ng-model="optional_hashtag2"
+						placeholder="#서브해시태그를 입력하세요." />
+				</div>
+				<div class="col-sm-10 col-sm-offset-2" style="padding-top: 10px;">
+					<input type="text" class="form-control" id="optional_hashtag3"
+						name="optional_hashtag3" ng-model="optional_hashtag3"
+						placeholder="#서브해시태그를 입력하세요." />
+				</div>
+				<div class="col-sm-10 col-sm-offset-2" style="padding-top: 10px;">
+					<input type="text" class="form-control" id="optional_hashtag4"
+						name="optional_hashtag4" ng-model="optional_hashtag4"
+						placeholder="#서브해시태그를 입력하세요." />
+				</div>
+				<div class="col-sm-10 col-sm-offset-2" style="padding-top: 10px;">
+					<input type="text" class="form-control" id="optional_hashtag5"
+						name="optional_hashtag5" ng-model="optional_hashtag5"
+						placeholder="#서브해시태그를 입력하세요." />
+				</div>
+			</div>
+			<!-- / subhashtag -->
+
+
+			<!-- description -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Description</label>
+				</div>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="description"
+						name="description" ng-model="description" placeholder="설명을 입력하세요." />
+				</div>
+			</div>
+			<!-- / description -->
+
+			<!-- Upload -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Upload</label>
+				</div>
+				<div class="col-sm-2 col-md-1">
+					<input type="file" nv-file-select="" uploader="uploader"
+						id="upload" name="upload" ng-model="upload" required />
+				</div>
+				<!-- <div class="col-sm-2">
+					<div ng-show="frm.upload.$error.required" style="color: red">clip
+						is required.</div>
+				</div> -->
+			</div>
+			<!-- / Upload -->
+
+			<!-- Heart -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Heart</label>
+				</div>
+				<div class="col-sm-5">
+					<!-- <input type="text" class="form-control" id="text" name="text"
+						placeholder="하트수를 조정하세요" /> -->
+					<input type="number" class="form-control" placeholder="하트수를 조정하세요."
+						id="heart" name="heart" ng-model="heart" min="0" required i />
+				</div>
+
+			</div>
+			<!-- / Heart -->
+
+			<!-- OpenYN -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">OpenYN</label>
+				</div>
+				<div class="col-sm-5">
+					<div class="radio-inline">
+						<label class="i-checks"> <input type="radio" name="open_yn" id="open_yn"
+							 value="Y" checked="checked"> <i></i> Y
+						</label>
+					</div>
+					<div class="radio-inline">
+						<label class="i-checks"> <input type="radio" name="open_yn" id="open_yn"
+							ng-model="Open_N" value="N"> <i></i> N
+						</label>
+					</div>
+					
+				</div>
+			</div>
+			<!-- / OpenYN -->
+
+			<!-- line -->
+			<div class="line line-dashed b-b line-lg pull-in"></div>
+			<!-- / line -->
+
+			<!-- footer button -->
+			<div class="row"
+				style="padding-top: 10px; padding-bottom: 20px; padding-left: 10px;">
+				<div class="col-sm-1 col-xs-3">
+					<button type="button" class="btn btn btn-default" ng-click="close()">Back</button>
+				</div>
+				<div class="col-sm-1 col-xs-3">
+					<button type="button" class="btn btn btn-default"
+						ng-click="reset()">Clear</button>
+				</div>
+				<div class="col-sm-1 col-xs-1 col-sm-offset-8">
+					<button type="submit" class="btn btn btn-default">Register</button>
+				</div>
+			</div>
+			<!-- / footer button -->
+		</form>
+	</div>
+</div>

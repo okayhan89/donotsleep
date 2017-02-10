@@ -1,0 +1,213 @@
+<script type="text/javascript">
+	
+</script>
+
+<style type="text/css">
+.form-horizontal .form-group {
+	padding-top: 10px;
+}
+</style>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">User Manage > Personal User Information</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="PersonalUserController">
+	<!-- search part -->
+	<div class="row col-md-8 col-md-offset-4">
+		<div class="panel panel-default"
+			style="padding-left: 10px; padding-right: 10px;">
+			<form class="form-horizontal" action="formActionBody" method="POST"
+				name="frm">
+				<div class="row" style="padding-top: 10px;">
+					<div class="col-md-1">
+						<label class="control-label">Search</label>
+					</div>
+					<div class="col-md-3">
+						<select class="form-control" id="select" name="select">
+							<option>ALL</option>
+							<option>User Alias</option>
+							<option>Account Type</option>
+							<option>Country</option>
+						</select>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" id="text" name="text"
+							placeholder="입력하세요." />
+					</div>
+				</div>
+				<div class="row" style="padding-bottom: 10px; padding-top: 10px;">
+					<div class="col-sm-1 col-xs-12">
+						<label class="control-label">Period</label>
+					</div>
+					<div class="col-sm-2 col-xs-4">
+						<input id="date" name="date" ui-jq="daterangepicker"
+							ui-options="{
+										singleDatePicker: true,
+						                format: 'YYYY-MM-DD',
+						                showDropdowns: true
+						              }"
+							class="form-control w-md" style="width: 90px" />
+					</div>
+					<div class="col-sm-1 col-xs-1">~</div>
+					<div class="col-sm-2 col-xs-4">
+						<input id="date" name="date" ui-jq="daterangepicker"
+							ui-options="{
+										singleDatePicker: true,
+						                format: 'YYYY-MM-DD',
+						                showDropdowns: true
+						              }"
+							class="form-control w-md" style="width: 90px" />
+					</div>
+					<div class="col-sm-4 col-xs-8">
+						<button type="submit" class="btn btn-sm btn btn-default">Today</button>
+						<button type="submit" class="btn btn-sm btn btn-default">1Week</button>
+						<button type="submit" class="btn btn-sm btn btn-default">1Month</button>
+						<button type="submit" class="btn btn-sm btn btn-default">1Year</button>
+						<button type="submit" class="btn btn-sm btn btn-default">All</button>
+					</div>
+					<div class="col-sm-1 col-xs-4">
+						<button type="submit" class="btn btn-sm btn-info"
+							style="font-size: 15px;">Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- / search part -->
+
+
+	<!-- table button top part -->
+	<div class="row">
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button class="btn btn-default"  ng-click="selectExcel()" ng-mouseover="button1=' select excel'" ng-mouseout="button1=''">
+					<i class="fa fa-check-square-o">{{button1}}</i>
+				</button>
+				<button class="btn btn-default " ng-click="allExcel()" ng-mouseover="button2=' All excel'" ng-mouseout="button2=''">
+					<i class="glyphicon glyphicon-download-alt">{{button2}}</i>
+				</button>
+				<button class="btn btn-default" ng-click="selectAdvancedExcel()" ng-mouseover="button3=' select Advanced excel'" ng-mouseout="button3=''">
+					<i class="fa fa-copy">{{button3}}</i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- / table button top part -->
+
+	<!-- table -->
+	<form>
+		<div class="table-responsive" style="overflow-x: auto;">
+			<table class="table table-striped">
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>User Alias</th>
+					<th>Email</th>
+					<th>Account Type</th>
+					<th>Social Id</th>
+					<th>Country</th>
+					<th>OS</th>
+					<th>Login Count</th>
+					<th>Clip Count</th>
+					<th>Login YN</th>
+					<th>Last Login Date</th>
+					<th>Created Date</th>
+					<th>Email Auth</th>
+					<th>Password Reset</th>
+					<th>Push</th>
+					<th>Auto Play</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>boa</th>
+					<th>boa@~</th>
+					<th>-</th>
+					<th>-</th>
+					<th>korea</th>
+					<th>android</th>
+					<th>21</th>
+					<th>88</th>
+					<th>Y</th>
+					<th>1/13/16 3:27</th>
+					<th>1/13/16 3:27</th>
+					<th>Y</th>
+					<th>N</th>
+					<th>Y</th>
+					<th>Y</th>
+				</tr>
+				<tr>
+					<th width="15"><label class="checkbox m-n i-checks"> <input
+							type="checkbox"> <i></i>
+					</label></th>
+					<th>seeso</th>
+					<th>-</th>
+					<th>FACEBOOK</th>
+					<th>new9867</th>
+					<th>korea</th>
+					<th>ios</th>
+					<th>15</th>
+					<th>45</th>
+					<th>N</th>
+					<th>1/13/16 3:27</th>
+					<th>1/13/16 3:27</th>
+					<th>Y</th>
+					<th>N</th>
+					<th>Y</th>
+					<th>Y</th>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<!-- / table -->
+
+	<!-- table footer button-->
+	<div class="row"style="padding-bottom: 30px;">
+<!-- 
+		<div class="col-md-4 col-xs-8">
+			<a ui-sref="app.content.clip.newclip">
+			<button class="btn btn-s-sm btn-default" type="button">
+			New Clip</button>
+			</a>
+			
+			<a ui-sref="app.content.clip.modifyclip">
+			<button class="btn btn-s-sm btn-default" type="button">
+			Modify Clip Info</button>
+			</a>
+		</div>
+		<div id="divPaging" class="col-sm-4 text-center text-center-xs">
+		</div>
+
+		<div class="text-right col-md-4 col-xs-2">
+			<a ui-sref="app.content.clip.advanced">
+			<button class="btn btn-s-sm btn-default" type="button"
+				onclick="jsStaffPicks();">Advanced Info</button>
+			</a>
+		</div>
+ -->
+		 <div class="row"
+				style="padding-top: 10px; padding-bottom: 20px; padding-left: 25px;">
+					<div class="col-sm-5">
+					<button class="btn btn-s-sm btn-default" type="button" ng-click="password_reset()">
+					Password Reset</button>
+					<button class="btn btn-s-sm btn-default" type="button" ng-click="upload_list()">
+					Upload List</button>
+					<button class="btn btn-s-sm btn-default" type="button" ng-click="reply_list()">
+					Reply List</button>
+					</div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-3">
+					<a ui-sref="app.user.info.personal_advanced">
+					<button class="btn btn-s-sm btn-default" type="button"
+						>Advanced Info</button>
+					</a>
+					</div>
+			</div>
+	</div>
+	<!-- / table footer button-->
+	
+	
+</div>

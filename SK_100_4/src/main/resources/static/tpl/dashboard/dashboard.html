@@ -1,0 +1,326 @@
+<script>
+$(function () {
+
+    $('#container').highcharts({
+
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+
+        title: {
+            text: 'Sleeping Indicators'
+        },
+
+        pane: {
+            startAngle: -150,
+            endAngle: 150,
+            background: [{
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#FFF'],
+                        [1, '#333']
+                    ]
+                },
+                borderWidth: 0,
+                outerRadius: '109%'
+            }, {
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#333'],
+                        [1, '#FFF']
+                    ]
+                },
+                borderWidth: 1,
+                outerRadius: '107%'
+            }, {
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%'
+            }]
+        },
+
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 200,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2,
+                rotation: 'auto'
+            },
+            title: {
+                text: 'km/h'
+            },
+            plotBands: [{
+                from: 0,
+                to: 120,
+                color: '#55BF3B' // green
+            }, {
+                from: 120,
+                to: 160,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 160,
+                to: 200,
+                color: '#DF5353' // red
+            }]
+        },
+
+        series: [{
+            name: 'Speed',
+            data: [80],
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+
+    },
+    // Add some life
+    function (chart) {
+        if (!chart.renderer.forExport) {
+            setInterval(function () {
+                var point = chart.series[0].points[0],
+                    newVal,
+                    inc = Math.round((Math.random() - 0.5) * 20);
+
+                newVal = point.y + inc;
+                if (newVal < 0 || newVal > 200) {
+                    newVal = point.y - inc;
+                }
+         		
+                $.ajax({
+            	    url: '/highchart_sleeping',
+            	    type: 'POST',
+            	    //async: true,
+            	    //dataType: "json",
+            	    success: function (data) {
+            	        //eye(data);
+            	    	point.update(data);
+            	    }
+            	  });
+                //newVal=100;
+                point.update(newVal);
+
+            }, 3000);
+        }
+    });
+});
+
+
+
+ $(document).ready(function() {
+	 $.ajax({
+	    url: '/highchart_eye',
+	    type: 'POST',
+	    async: true,
+	    dataType: "json",
+	    success: function (data) {
+	        eye(data);
+	    }
+	  });
+	 $.ajax({
+		    url: '/highchart_co2',
+		    type: 'POST',
+		    async: true,
+		    dataType: "json",
+		    success: function (data) {
+		        co2(data);
+		    }
+		  });
+	 $.ajax({
+		    url: '/highchart_humidity',
+		    type: 'POST',
+		    async: true,
+		    dataType: "json",
+		    success: function (data) {
+		        humidity(data);
+		    }
+		  });
+	 $.ajax({
+		    url: '/highchart_temperature',
+		    type: 'POST',
+		    async: true,
+		    dataType: "json",
+		    success: function (data) {
+		    	temperature(data);
+		    }
+		  });
+	 $.ajax({
+		    url: '/highchart_discomfort',
+		    type: 'POST',
+		    async: true,
+		    dataType: "json",
+		    success: function (data) {
+		    	discomfort(data);
+		    }
+		  });
+	 }); 
+ function eye(data1) {
+		console.log("visitorData");
+	    $('#eye').highcharts({
+	    	colors: ["#cc0033"],
+	        title: {
+	            text: 'EYE DATA',
+	            //x: -20 //center
+	        },
+	        xAxis: {
+	            categories: []
+	        },
+	        yAxis: {
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        series: [{
+	            name: 'EYE',
+	            data: data1
+	        }]
+	    });
+	};
+ function co2(data1) {
+	    $('#co2').highcharts({
+	    	colors: ["#cc0033"],
+	        title: {
+	            text: 'CO2 DATA',
+	            //x: -20 //center
+	        },
+	        xAxis: {
+	            categories: []
+	        },
+	        yAxis: {
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        series: [{
+	            name: 'CO2',
+	            data: data1
+	        }]
+	    });
+	};
+ function humidity(data1) {
+	    $('#humidity').highcharts({
+	    	colors: ["#ff6633"],
+	        title: {
+	            text: 'Humidity DATA',
+	            //x: -20 //center
+	        },
+	        xAxis: {
+	            categories: []
+	        },
+	        yAxis: {
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        series: [{
+	            name: 'Humidity',
+	            data: data1
+	        }]
+	    });
+	};
+ function temperature(data1) {
+	    $('#temperature').highcharts({
+	    	colors: ["#ff6633"],
+	        title: {
+	            text: 'Temperature DATA',
+	            //x: -20 //center
+	        },
+	        xAxis: {
+	            categories: []
+	        },
+	        yAxis: {
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        series: [{
+	            name: 'Temperature',
+	            data: data1
+	        }]
+	    });
+	};
+ function discomfort(data1) {
+	    $('#discomfort').highcharts({
+	    	colors: ["#cc0033"],
+	        title: {
+	            text: 'Discomfort DATA',
+	            //x: -20 //center
+	        },
+	        xAxis: {
+	            categories: []
+	        },
+	        yAxis: {
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        series: [{
+	            name: 'Discomfort',
+	            data: data1
+	        }]
+	    });
+	};
+
+ 
+ 
+</script>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">DashBoard</h1>
+</div>
+<div class="wrapper-md" ng-controller="DashboardController">
+
+	<!-- Sensor Data -->
+	<div class="panel-heading font-bold h4">[Sensor Data]</div>
+	
+	<div class="row">
+		<div id="container" class="col-md-6"></div>
+		<div id="eye" class="col-md-6"></div>
+	</div>
+	
+	<!-- / Sensor Data -->
+	<br/>
+	<div class="row">
+		<div id="co2" class="col-md-6"></div>
+		<div id="humidity" class="col-md-6"></div>
+	</div>
+	<br/>
+	<div class="row">
+		<div id="temperature" class="col-md-6"></div>
+		<div id="discomfort" class="col-md-6"></div>
+	</div>
+	
+
+
+</div>

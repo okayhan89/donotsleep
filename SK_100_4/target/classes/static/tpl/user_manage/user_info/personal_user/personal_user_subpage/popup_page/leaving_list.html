@@ -1,0 +1,52 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Leaving List</h3>
+	</div>
+	<div class="modal-body">
+		Main Content {{sample}}
+		<form class="form-horizontal" action="formActionBody1" method="POST"
+			name="frm">
+			<!-- Email -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">E-Mail</label>
+				</div>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" id="email" name="email"
+						placeholder="E-mail을 작성하세요." ng-model="email" required />
+				</div>
+			</div>
+			<!-- / Email -->
+
+			<!-- Alias -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Alias</label>
+				</div>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="alias" name="alias"
+						placeholder="아이디를 입력하세요." ng-model="alias" required />
+				</div>
+			</div>
+			<!-- / Alias -->
+
+			<!-- Description -->
+			<div class="row" style="padding-top: 10px; padding-bottom: 20px;">
+				<div class="col-sm-2">
+					<label class="control-label">Description</label>
+				</div>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="description"
+						name="optional_hashtag1" ng-model="description"
+						placeholder="#탈퇴 이유를 작성하세요." />
+				</div>
+			</div>
+			<!-- / Description -->
+
+			<div class="modal-footer">
+				<button class="btn btn-warning" type="button" ng-click="close()">Cancel</button>
+				<button class="btn btn-primary" type="submit">Register</button>
+			</div>
+		</form>
+	</div>
+</div>

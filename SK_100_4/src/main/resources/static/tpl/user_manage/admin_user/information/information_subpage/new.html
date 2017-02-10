@@ -1,0 +1,212 @@
+<script type="text/javascript">
+	
+</script>
+
+<style>
+input:invalid {
+	border: 1px solid red;
+}
+</style>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">User Manage > Admin User
+		Information > New Administrator</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="AdminNewController">
+	<div class="panel panel-default"
+		style="padding-left: 10px; padding-right: 10px;">
+		<form class="form-horizontal" action="formActionBody1" method="POST"
+			name="frm">
+
+
+			<!-- Admin ID -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Admin ID</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="admin_id"
+						name="admin_id" placeholder="관리자 아이디를 입력하세요." ng-model="admin_id"
+						required />
+				</div>
+				<div class="col-sm-2">
+					<input type="button" value="Check"
+						class="btn btn-sm btn btn-default" ng-click="check()" />
+				</div>
+				<div class="col-sm-4">
+					<div ng-show="frm.admin_id.$valid">{{admin_id_check}}</div>
+					<div ng-show="frm.admin_id.$error.required" style="color: red">admin_id
+						is required.</div>
+				</div>
+
+
+			</div>
+			<!-- / Admin ID -->
+
+
+			<!-- User E-mail -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">E-mail</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="user_email"
+						name="user_email" ng-model="user_email"
+						placeholder="email을 입력하세요." required />
+				</div>
+				<div class="col-sm-2">
+					<input type="button" value="Double Check"
+						class="btn btn-sm btn btn-default" ng-click="double_check()" />
+				</div>
+				<div class="col-sm-4">
+					<div ng-show="frm.user_email.$valid">{{user_email_check}}</div>
+					<div ng-show="frm.user_email.$error.required" style="color: red">user_email
+						is required.</div>
+				</div>
+			</div>
+			<!-- / User E-mail -->
+
+			<!-- First Name -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">First Name</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="first_name"
+						name="first_name" ng-model="first_name" placeholder="성을 입력하세요."
+						required />
+				</div>
+			</div>
+			<!-- / First Name -->
+
+			<!-- Last Name -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Last Name</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="last_name"
+						name="last_name" ng-model="last_name" placeholder="이름을 입력하세요."
+						required />
+				</div>
+			</div>
+			<!-- / Last Name -->
+
+			<!-- password -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Password</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="password" class="form-control" name="password"
+						ng-model="password" placeholder="password을 입력하세요."
+						ng-pattern="/^(?=.*\d).{8,12}$/" required>
+				</div>
+				<div class="col-sm-4">
+					<div ng-show="frm.password.$error.pattern" style="color: red"
+						role="alert">최소 8글자, 최대 12글자</div>
+				</div>
+			</div>
+			<!-- / password -->
+
+			<!-- re password -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Password Confirm</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="password" class="form-control" name="confirm_password"
+						required ng-model="confirm_password"
+						placeholder="password을 재입력하세요." ui-validate=" '$value==password' "
+						ui-validate-watch=" 'password' ">
+				</div>
+				<div class="col-sm-4">
+					<div ng-show='frm.confirm_password.$error.validator'
+						style="color: red">Passwords do not match!</div>
+				</div>
+			</div>
+			<!-- / re password -->
+
+
+			<!-- Department -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Department</label>
+				</div>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="department"
+						name="department" ng-model="department" placeholder="부서를 입력하세요."
+						 />
+				</div>
+			</div>
+			<!-- / Department -->
+			
+			<!-- Position -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Position</label>
+				</div>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="position"
+						name="position" ng-model="position" placeholder="직급을 입력하세요."
+						 />
+				</div>
+			</div>
+			<!-- / Position -->
+			
+			<!-- Mobile Phone -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Mobile Phone</label>
+				</div>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="mobile_phone"
+						name="mobile_phone" ng-model="mobile_phone"
+						placeholder="전화번호를 입력하세요."
+						ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/" />
+				</div>
+			</div>
+			<!-- / Mobile Phone -->
+
+
+			<!-- Access Authority -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Access Authority</label>
+				</div>
+				<div class="col-sm-5">
+					<select class="form-control" id="select" name="select">
+							<option>Super Admin (Lv0)</option>
+							<option>Global Admin (Lv1)</option>
+							<option>Managing Admin (Lv2)</option>
+							<option>Support Admin (Lv3)</option>
+							<option>General Admin (Lv4)</option>
+					</select>
+				</div>
+			</div>
+			<!-- / Access Authority -->
+			
+			<!-- line -->
+			<div class="line line-dashed b-b line-lg pull-in"></div>
+			<!-- / line -->
+
+			<!-- footer button -->
+			<div class="row"
+				style="padding-top: 10px; padding-bottom: 20px; padding-left: 10px;">
+				<div class="col-sm-1 col-xs-3">
+					<a ui-sref="app.user.admin.info">
+						<button type="button" class="btn btn btn-default">Back</button>
+					</a>
+				</div>
+				<div class="col-sm-1 col-xs-3">
+					<button type="reset" class="btn btn btn-default">Clear</button>
+				</div>
+				<div class="col-sm-1 col-xs-1 col-sm-offset-8">
+					<button type="submit" class="btn btn btn-default">Register</button>
+				</div>
+			</div>
+			<!-- / footer button -->
+		</form>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	var params="request Test";  
+	var allData = { "userId": ''};
+    jQuery.ajax({
+          type:"POST",
+          url:"./index2",
+          data: allData, 
+          //dataType:"JSON", // 옵션이므로 JSON으로 받을게 아니면 안써도 됨
+          success : function(data) {
+                // 통신이 성공적으로 이루어졌을 때 이 함수를 타게 된다.
+                // TODO
+                console.log(data);
+          },
+          complete : function(data) {
+                // 통신이 실패했어도 완료가 되었을 때 이 함수를 타게 된다.
+                // TODO
+          },
+          error : function(xhr, status, error) {
+                //alert(error);
+                console.log(error);
+                console.log(xhr);
+                console.log(status);
+          }
+    });
+    
+    /* function explode(){
+    	location.reload(true);
+    	alert("g");
+    	}
+    setTimeout(explode, 2000); */
+    //var myVar = setInterval(myTimer, 1000);
+    
+    //location.reload(true);
+});
+
+/* $(function() {
+	timer = setInterval( function () {
+		//----------------------------------------------------------------------------------
+		$.ajax ({
+			url : "./index3",  // ----- (1)
+			cache : false,
+			success : function (data) { // ----- (2)
+				//[받아온 내용을 처리할 부분] // ----- (3)
+				//[받아온 내용은 변수 html로 전달]
+			
+				console.log("data success");
+				console.log(data);
+			}
+		});
+		//----------------------------------------------------------------------------------
+	}, 3000); // 30초에 한번씩 받아온다.
+}); */
+
+</script>
+
+<body>
+index
+</body>
+</html>

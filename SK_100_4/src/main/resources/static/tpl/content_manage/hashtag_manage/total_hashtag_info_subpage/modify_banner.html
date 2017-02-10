@@ -1,0 +1,93 @@
+<script type="text/javascript">
+	
+</script>
+
+<div class="bg-light lter b-b wrapper-md">
+	<h1 class="m-n font-thin h5 font-bold">Content Manange > Total Hashtag Information > Modify Banner</h1>
+</div>
+
+<div class="wrapper-md" ng-controller="ModifyBannerController">
+	<div class="panel panel-default"
+		style="padding-left: 10px; padding-right: 10px;">
+		<form class="form-horizontal" action="formActionBody1" method="POST"
+			name="frm">
+
+			<!-- Primary HashTag -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Primary HashTag</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="primary_hashtag"
+						name="primary_hashtag" placeholder="#해시태그를 입력하세요."
+						ng-model="primary_hashtag" required />
+				</div>
+				<div class="col-sm-2">
+					<input type="button" value="Search"
+						class="btn btn-sm btn btn-default" ng-click="search()" />
+				</div>
+				<div class="col-sm-3">
+					<div ng-show="frm.primary_hashtag.$valid">{{primary_hashtag_check}}</div>
+					<div ng-show="frm.primary_hashtag.$error.required"
+						style="color: red">primary hashtag is required.</div>
+				</div>
+			</div>
+			<!-- / Primary HashTag -->
+
+
+			<!-- Upload -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">Banner Upload</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="button" value="Default"
+						class="btn btn-sm btn btn-default" ng-click="default_check()" />
+				</div>
+				
+				<div class="col-sm-2 col-md-1">
+					<input type="file" nv-file-select="" uploader="uploader"
+						id="upload" name="upload" ng-model="upload" />
+				</div>
+				
+				
+			</div>
+			<!-- / Upload -->
+
+			<!-- 기존 Banner gif -->
+			<div class="row" style="padding-top: 10px;">
+				<div class="col-sm-2">
+					<label class="control-label">기존 Banner gif</label>
+				</div>
+				<div class="col-sm-2 col-md-1">
+					<img src="img/a0.jpg" />
+				</div>
+			</div>
+			<!-- / 기존 Banner gif -->
+				
+			
+			
+			<!-- line -->
+			<div class="line line-dashed b-b line-lg pull-in"></div>
+			<!-- / line -->
+
+			<!-- footer button -->
+			<div class="row"
+				style="padding-top: 10px; padding-bottom: 20px; padding-left: 10px;">
+				<div class="col-sm-1 col-xs-3">
+					<a ui-sref="app.content.hashtag.total">
+						<button type="button" class="btn btn btn-default">Back</button>
+					</a>
+				</div>
+				<div class="col-sm-1 col-xs-3">
+					<button type="button" class="btn btn btn-default"
+						ng-click="reset()">Clear</button>
+				</div>
+				<div class="col-sm-1 col-xs-1 col-sm-offset-8">
+					<button type="submit" class="btn btn btn-default">Register</button>
+				</div>
+			</div>
+			<!-- / footer button -->
+		</form>
+	</div>
+</div>
